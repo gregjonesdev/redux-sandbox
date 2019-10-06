@@ -1,13 +1,18 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+// import rootReducer from './redux/reducers';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Hello } from "./components/Hello";
 
 
-ReactDOM.render(
-  <Hello compiler="Typescript" framework="React" />,
-  document.getElementById("root")
+render(
+  <Provider store={store}>
+    <Hello compiler="Typescript" framework="React" />
+  </Provider>
+  ,document.getElementById("root")
 )
 serviceWorker.unregister();
