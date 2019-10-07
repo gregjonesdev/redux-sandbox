@@ -2,8 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../redux/actions'
 
-const AddTodo = ({ dispatch }) => {
-  let input
+interface IProps {
+    dispatch: any;
+    // any other props that come into the component
+}
+
+const AddTodo = ({ dispatch }: IProps) => {
+  let input: any;
 
   return (
     <div>
